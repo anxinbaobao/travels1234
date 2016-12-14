@@ -1,0 +1,219 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>注册1</title>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/layout.css">
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+<style type="text/css">
+      body{
+      	background-image: url("images/banner.jpg");
+      }
+      #tishi1{
+        width:100px;
+        position: absolute;
+        margin-left: 280px;
+       margin-top: -30px;
+       color:red;
+       background-image: url(images/shibai.png);
+       background-position: right center;
+       background-repeat: no-repeat;
+      }
+     #tishi2{
+        width:100px;
+        position: absolute;
+        margin-left: 280px;
+       margin-top: -30px;
+       color:red;
+       background-image: url(images/shibai.png);
+       background-position: right center;
+       background-repeat: no-repeat;
+      }
+      #tishi3{
+        width:100px;
+        position: absolute;
+        margin-left: 280px;
+       margin-top: -30px;
+       color:red;
+       background-image: url(images/shibai.png);
+       background-position: right center;
+       background-repeat: no-repeat;
+      }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-md-offset-4" id="form">
+			<div class="tou">
+				<h2 class="text-center">注册</h2>
+				<div class="form-group">
+					<label>用户名</label>
+					<input id="account" type="text" class="form-control">
+                          
+                           <span id="tishi1" style="display: none;">账户未填写</span>
+				</div>
+				<div class="form-group">
+					<label>密码</label>
+					<input id="password" type="password" class="form-control">
+
+                           <span id="tishi2" style="display: none;">密码未填写</span>
+				</div>
+				<div class="form-group">
+					<label>确认密码</label>
+					<input id="passw" type="password" class="form-control">
+          
+                           <span id="tishi3" style="display: none;">密码未填写</span>
+				</div>
+				<div class="form-group">
+					<button id="register" class="btn btn-success col-md-6 col-md-offset-3" disabled="true">注册</button>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" scr="layer/layer.js"></script>
+<script type="text/javascript">
+$(function(){
+ $('#account').on('click',function(){
+   console.log(this);
+   if(''==$('#account').val()){
+  tishi1.style.display='none';
+                              };
+                                 });
+ $('#account').on('blur',function(){
+    console.log(this);
+     if(''==$('#account').val()){
+     tishi1.style.display='block';
+                                      }
+                                   });
+ $('#password').on('click',function(){
+   console.log(this);
+   if(''==$('#password').val()){
+  tishi2.style.display='none';
+                              };
+                                 });
+ $('#password').on('blur',function(){
+    console.log(this);
+     if(''==$('#password').val()){
+     tishi2.style.display='block';
+                                      }
+                                   });
+})
+  $('#passw').on('click',function(){
+   console.log(this);
+   if(''==$('#passw').val()){
+  tishi3.style.display='none';
+                              };
+                                 });
+ $('#passw').on('blur',function(){
+    console.log(this);
+     if(''==$('#passw').val()){
+     tishi3.style.display='block';
+                                      }
+                                   });
+</script>
+
+<script type="text/javascript">
+  function buttonStatus(){
+    var input = $('#form input')
+    var flag = 1
+    for(var i=0;i<input.length;i++){
+      if(! input[i].value){
+        flag=0
+      }
+    }
+    if (flag==1){
+      $('#register').attr('disabled',false)
+
+    }
+    else{
+      $('#register').attr('disabled',true)
+    }
+  }
+  $(function(){
+    $('#form input').on('blur',function(){
+      buttonStatus()
+    })
+    $('#form input').on('keyup',function(){
+      buttonStatus()
+    })
+  })
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+$(function () {
+  $('#register').on('click', function () {
+  	     var a ='';
+           var b='';
+           var c='';
+           a=document.getElementById('account').value;
+           b=document.getElementById('password').value;
+           c=document.getElementById('passw').value;
+            if (a=='' || b=='' || c==''){
+            	alert('请输入账户名或密码')
+                      return;}
+           if(b!=c){
+                alert('两次密码输入不一致')
+                return;
+            }
+    $.ajax({
+      url: 'register',
+      method: 'post',
+      data: {
+        account: $('#account').val(),
+        password: $('#password').val()
+      },
+      dataType: 'json',
+      success: function (data, status, xhr) {
+     console.log(data);
+       if(data.message=='OK'){
+        window.location.href='login.html';
+
+      } else {
+        if ('DUPLICATED_ACCOUNT' == data.error) {
+          alert('此用户已被注册');
+        }
+      }
+     },
+      error: function (xhr, status, error) {
+        console.log(error);
+      }
+    });
+  });
+});
+</script>
+
+<!--<script type="text/javascript">
+$(function(){
+$('#account').on('blur',function(){
+    console.log(this);
+   layer.msg('账号未填写')
+});
+$('#password').on('blur',function(){
+    console.log(this);
+   layer.msg('密码未填写')
+});
+$('#passw').on('blur',function(){
+    console.log(this);
+   layer.msg('确认密码未填写')
+});
+
+});
+
+</script>-->
+</body>
+</html>

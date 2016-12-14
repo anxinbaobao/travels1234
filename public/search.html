@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>搜索</title>
+<script type="text/javascript" src="js/js.cookie-2.1.0.min.js"></script>
+<script src="js/jquery-1.12.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+
+<script src="js/handlebars-v4.0.5.js" type="text/javascript" ></script>
+<link rel="stylesheet" href="css/main.css"/>
+<script src="js/arg-1.3.js"></script>
+
+<style type="text/css">
+	.daohang{
+		background-color: #000;
+	}
+</style>
+</head>
+
+<body>
+<div class="daohang">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 ">
+				<ul class="nav">
+					<li class="active"><a href="#">首页</a></li>
+					<li><a href="index.html">首页</a></li>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">首页</a></li>
+					<li><a href="#">首页</a></li>
+				</ul>
+			</div>
+			<div class="col-md-4">
+				<div class="input-group">
+					<input type="text" class="form-control" placeholder="Search" id="input">
+					<span class="input-group-addon"><a id="submit">搜索</a></span>
+				</div>
+				<!-- <div class="input-group">
+				      <input type="text" class="form-control" />
+				      <span class="input-group-btn">
+				        <button class="btn btn-danger" id="button">
+					Go!
+					<span class="glyphicon glyphicon-search"></span>
+				        </button>
+				      </span>
+				</div> -->
+			</div>
+			<div class="col-md-4">
+				<ul class="nav-right" id="yonghu">
+					<li><a href="#">登录</a></li>
+					<li><a href="#">注册</a></li>
+				</ul>
+				<span class="telphone" style="margin-top:40px;">联系我们:110</span>
+
+			</div>
+		</div>
+	</div>
+</div>
+<div class="clear"></div>
+<div class="main-1">
+	<div class="container">
+		<div class="row">
+		<div class="title">
+		<div class="col-md-12">
+			<div class="col-md-6">
+				<h4 style="float: left; line-height: 50px; margin-top: -0px;" ><a href="index.html" style="color: #fff;text-decoration: none;">网站首页</a></h4>
+				<span  style="float: left; line-height: 50px; margin-left: 10px;"></span>
+			</div>
+			<div class="col-md-6">
+			</div>
+
+		</div>
+		</div>
+		</div>
+	</div>
+</div>
+
+<div class="sousuo">
+	<div class="container">
+		<div class="row" id="sou">
+			<!-- <div class="panel">
+				<div class="col-md-6">
+					<img src="images/kaoya.jpg"  class="img-rounded" />
+				</div>
+				<div class="col-md-6">
+			            <div class="wenzi">
+		           	<h2 style="font-family: '微软雅黑'; color: #fff;"></h2>
+		           	<ul>
+		           	           <li><strong>别名：</strong><span ></span></li>
+		           		<li><strong>口味：</strong><span ></span></li>
+		           		<li><strong>历史：</strong><span ></span></li>
+		           		<li><strong>简介：</strong><span i></span></li>
+		           	</ul>
+		           	</div>
+				</div>
+			</div> -->
+		</div>
+	</div>
+</div>
+<script id="out" type="text/x-handlebars-template">
+	{{#each wad}}
+	<div class="col-md-6">
+		<img src="{{pic_2}}" />
+	</div>
+	<div class="col-md-6">
+		<div class="wenzi">
+			<h2 ><a href="meishi.html?id={{id}}">{{name}}</a></h2>
+			<ul>
+		           	<li><!-- <strong>口味：</strong> --><span >{{alias}}</span></li>
+		           	<li><!-- <strong>口味：</strong> --><span >{{taste}}</span></li>
+		           	<li><!-- <strong>历史：</strong> --><span >{{history}}</span></li>
+		           	<li><!-- <strong>简介：</strong --><span>{{intro}}</span></li>
+		          </ul>
+		</div>
+	</div>
+	{{/each}}
+</script>
+
+<script type="text/javascript">
+$(function(){
+  	$('#submit').on('click', function () {
+   		 console.log('1')
+	   		 $.ajax({
+	    			  url:'wad/search',
+	    			  method:'post',
+	    			  data: {search: $('#input').val()},
+	    			  dataType:'json',
+	    			  success:function(data,status,xhr){
+	     			   	console.log('2');
+	      			 	 console.log(data[0]);
+	       			 	var source = $('#out').html();
+	       				var template = Handlebars.compile(source);
+	       			 	var da = {'wad': data};
+	       			 	$('#sou').html(template(da));
+	     			 },
+	     			 error:function(xhr,status,error){
+	       			 console.log(error);
+	     			 } 
+	   		 });
+	   	
+ 	 });
+});
+</script> 
+
+<script type="text/javascript">
+	$(function(){
+			$.ajax({
+				url:'wad/search',
+				method:'post',
+				data: {search: $('#input').val()},		
+				dataType:'json',
+				success:function(data,status,xhr){
+					console.log('2');
+	      			 	 console.log(data[0]);
+	       			 	var source = $('#out').html();
+	       				var template = Handlebars.compile(source);
+	       			 	var d = {'wad': data};
+	       			 	$('#sou').html(template(d));
+	     			 },
+		
+
+			})
+		
+	})
+</script>
+
+<script type="text/javascript">
+	$(function(){
+		var s=Arg('search');
+		console.log(s);
+		var inp=document.getElementById('input');
+		inp.value=s;
+		if(s){
+			 $.ajax({
+            		url:'wad/search',
+            		method:'post',
+           		 data: {search:s},
+          			  dataType:'json',
+            		success:function(data,status,xhr){    
+             		 var source = $('#out').html();
+              		var template = Handlebars.compile(source);
+             		 var da = {'wad': data};
+              		$('#sou').html(template(da));
+            	},
+           		 error:function(xhr,status,error){
+              		console.log(error);
+           	 }
+          });   
+
+		}
+	})
+</script>
+
+
+
+
+
+
+<script type="text/javascript">
+	if(Cookies.get('user')){
+		document.getElementById('yonghu').innerHTML='欢迎您：'+Cookies.get('user');
+	}
+</script><!-- 获取登录用户名 -->
+
+</body>
+</html>

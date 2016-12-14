@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>登录1</title>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/layout.css">
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+<script type="text/javascript" src="js/js.cookie-2.1.0.min.js"></script>
+<style type="text/css">
+      body{
+      	background-image: url("images/banner.jpg");
+      }
+       #tishi1{
+        width:110px;
+        position: absolute;
+        margin-left: 280px;
+       margin-top: -30px;
+       color:red;
+       background-image: url(images/shibai.png);
+       background-position: right center;
+       background-repeat: no-repeat;
+      }
+     #tishi2{
+        width:100px;
+        position: absolute;
+        margin-left: 280px;
+       margin-top: -30px;
+       color:red;
+       background-image: url(images/shibai.png);
+       background-position: right center;
+       background-repeat: no-repeat;
+      }
+      .wangji{
+      	width:300px;
+      	height: 30pxl;
+      	float: left;
+      	margin-top: 10px;
+      	margin:0;
+      	padding:0;
+      }
+      .wangji li{
+      	list-style-type: none;
+      	float: left;
+      }
+      .wangji li a{
+      	width:150px;
+      	line-height: 30px;
+      	display: block;
+      	text-align: center;
+      	color:#fff;
+      	text-decoration: none;
+      	font-size: 16px;
+      }
+      .wangji li a:hover{
+      	color: #000;
+      }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3 col-md-offset-4" id="form">
+			<div class="tou">
+				<h2 class="text-center">登录</h2>
+				<div class="form-group">
+					<label>用户名</label>
+					<input id="account" type="text" class="form-control">
+					<span id="tishi1" style="display: none;">登录名未填写</span>
+				</div>
+				<div class="form-group">
+					<label>密码</label>
+					<input id="password" type="text" class="form-control">
+					<span id="tishi2" style="display: none;">密码未填写</span>
+				</div>
+				<div class="form-group">
+					<button id="login" class="btn btn-success col-md-12" disabled="true">登录</button>
+				</div>
+
+			</div>
+			<ul class="wangji">	
+				<li><a href="">未注册</a></li>
+				<li><a href="">修改密码</a></li>
+			</ul>
+
+			</div>
+		</div>
+	</div>
+</div>
+<script src="jquery/jquery.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" scr="layer/layer.js"></script>
+<script type="text/javascript">
+$(function(){
+ $('#account').on('click',function(){
+   console.log(this);
+   if(''==$('#account').val()){
+  tishi1.style.display='none';
+                              };
+                                 });
+ $('#account').on('blur',function(){
+    console.log(this);
+     if(''==$('#account').val()){
+     tishi1.style.display='block';
+                                      }
+                                   });
+ $('#password').on('click',function(){
+   console.log(this);
+   if(''==$('#password').val()){
+  tishi2.style.display='none';
+                              };
+                                 });
+ $('#password').on('blur',function(){
+    console.log(this);
+     if(''==$('#password').val()){
+     tishi2.style.display='block';
+                                      }
+                                   });
+})
+</script>
+<script type="text/javascript">
+function buttonStatus(){
+ var input=$('#form input')
+ var flag=1
+ for(var i=0;i<input.length;i++){
+  if(!input[i].value){
+   flag=0
+                      }
+                                }
+if (flag==1) {
+  $('#login').attr('disabled',false)}
+  else{
+    $('#login').attr('disabled',true)}
+             }
+$(function(){
+  $('#form input').on('blur',function(){
+    buttonStatus()
+  })
+  $('#form input').on('keyup',function(){
+
+    buttonStatus()
+  })
+
+})
+</script>
+<script type="text/javascript">
+	$(function(){
+		$('#login').on('click',function(){
+                 var user=document.getElementById('account').value;
+      			$.ajax({
+				url:'login',
+				data:{
+					account:$('#account').val(),
+					password:$('#password').val()
+				},
+				type:'post',
+				dataType:'json',
+				success:function(data,status,xhr){
+					if(data.message=='OK'){
+                      Cookies.set('user',user);
+						alert('登录成功');
+						window.location.href='index.html';
+					}
+				
+					else{ alert('账号或者密码错误');}
+				},
+				error:function(xhr,status,data){
+					console.log(data);
+					alert('服务器错误');
+				}
+			});
+		});
+	});
+</script>
+</body>
+</html>

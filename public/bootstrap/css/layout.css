@@ -1,0 +1,10 @@
+.wrap{
+	width:100%;
+	height: 700px;
+	background-image: url("../images/loginbg.jpg");
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+.tou h2{
+	padding-top:50px;
+}
