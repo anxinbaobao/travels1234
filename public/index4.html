@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/babel.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/material.min.js"></script>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+</head>
+<body>
+<div id="result-switch"></div>
+
+<script type="text/babel">
+  class Toggle extends React.Component{
+       constructor(props){
+              super(props);
+              this.state = {isToggleOn:true};
+              this.handleClick = this.handleChick.bind(this);
+      }
+      handleClick(){
+             this.setState(prevSate =>({
+                    isToggleOn: !prevState.isToggleOn
+             }));
+      }
+      render(){
+            return(
+                  <button onClick={this.handleClick}
+                          className="mdl-button mdl-js-button mdl-button--raised mdl-button--accent"
+                  >
+                          {this.state.isToggleOn?'ON' : 'OFF'}
+                  </button>
+            );
+      }
+  }
+  ReactDOM.render(
+        <Toggle />,
+        document.getElementById('result-switch')
+  );
+</script>
+</body>
+</html>

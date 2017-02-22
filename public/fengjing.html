@@ -4,11 +4,14 @@
 <meta charset="utf-8">
 <title>风景</title>
 <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+<script src="js/handlebars-v4.0.5.js" type="text/javascript" ></script>
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
 <script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
 <script type="text/javascript" src="js/js.cookie-2.1.0.min.js"></script>
 <link rel="stylesheet" href="css/main.css"/>
+<script src="js/arg-1.3.js"></script>
+<script src="js/jquery-1.12.1.min.js"></script>
 
 </head>
 
@@ -147,152 +150,46 @@
 <!-- 景点 -->
 <div class="feng">
 	<div class="container">
-		<div class="row">
-				<div class="col-md-6">
+		<div class="row" id="jing">
+				<!-- <div class="col-md-6">
 					<div class="fdd">
 				          		 <div class="fe">
-				           		<img src="images/xia.jpg" class="img-rounded" id="kkl" />
+				           		<img src="" class="img-rounded" id="jingtu0" />
 				           		<div class="fe-guo1"></div>
 				           		<div class="fe-guo">
-				           			<h3 class="text-center">杭州西湖</h3>
+				           			<h3 class="text-center" id="jingname0"></h3>
 				           			<p></p>
-				           			<h4>dsfdsfdsfdsfdsfsfdsfdsfdsfsdffsdfsdffsdf</h4>
+				           			<h4 id="jingjie0"></h4>
 				           			<a href="">查看详情</a>
 				           		</div>
-				           	<h3 class="text-center" style="color:#fff;font-family: '微软雅黑';">杭州西湖</h3>
+				           	<h3 class="text-center" style="color:#fff;font-family: '微软雅黑';" id="jingname_0"></h3>
+				           	</div>
+				           </div>
+
+				  </div> -->
+
+				 <!--  <div class="col-md-6">
+					<div class="fdd">
+				          		 <div class="fe">
+				           		<img src="" class="img-rounded" id="jingtu1" />
+				           		<div class="fe-guo1"></div>
+				           		<div class="fe-guo">
+				           			<h3 class="text-center" id="jingname1"></h3>
+				           			<p></p>
+				           			<h4  id="jingjie1"></h4>
+				           			<a href="">查看详情</a>
+				           		</div>
+				           	<h3 class="text-center" style="color:#fff;font-family: '微软雅黑';"  id="jingname_1">江苏太湖</h3>
 				           	</div>
 				           </div>
 
 				  </div>
-
-				  <div class="col-md-6">
-					<div class="fdd">
-				          		 <div class="fe">
-				           		<img src="images/xia.jpg" class="img-rounded" id="kkl" />
-				           		<div class="fe-guo1"></div>
-				           		<div class="fe-guo">
-				           			<h3 class="text-center">江苏太湖</h3>
-				           			<p></p>
-				           			<h4>dsfdsfdsfdsfdsfsfdsfdsfdsfsdffsdfsdffsdf</h4>
-				           			<a href="">查看详情</a>
-				           		</div>
-				           	<h3 class="text-center" style="color:#fff;font-family: '微软雅黑';">江苏太湖</h3>
-				           	</div>
-				           </div>
-
-				  </div>
-
-				  <div class="col-md-6">
-					<div class="fdd">
-				          		 <div class="fe">
-				           		<img src="images/xia.jpg" class="img-rounded" id="kkl" />
-				           		<div class="fe-guo1"></div>
-				           		<div class="fe-guo">
-				           			<h3 class="text-center">新疆天山天地</h3>
-				           			<p></p>
-				           			<h4>dsfdsfdsfdsfdsfsfdsfdsfdsfsdffsdfsdffsdf</h4>
-				           			<a href="">查看详情</a>
-				           		</div>
-				           	<h3 class="text-center" style="color:#fff;font-family: '微软雅黑';">新疆天山天地</h3>
-				           	</div>
-				           </div>
-
-				  </div>
-
-				  <div class="col-md-6">
-					<div class="fdd">
-				          		 <div class="fe">
-				           		<img src="images/xia.jpg" class="img-rounded" id="kkl" />
-				           		<div class="fe-guo1"></div>
-				           		<div class="fe-guo">
-				           			<h3 class="text-center">杭州西湖</h3>
-				           			<p></p>
-				           			<h4>dsfdsfdsfdsfdsfsfdsfdsfdsfsdffsdfsdffsdf</h4>
-				           			<a href="">查看详情</a>
-				           		</div>
-				           	<h3 class="text-center" style="color:#fff;font-family: '微软雅黑';">杭州西湖</h3>
-				           	</div>
-				           </div>
-
-				  </div>
-
-				  <div class="col-md-6">
-					<div class="fdd">
-				          		 <div class="fe">
-				           		<img src="images/xia.jpg" class="img-rounded" id="kkl" />
-				           		<div class="fe-guo1"></div>
-				           		<div class="fe-guo">
-				           			<h3 class="text-center">杭州西湖</h3>
-				           			<p></p>
-				           			<h4>dsfdsfdsfdsfdsfsfdsfdsfdsfsdffsdfsdffsdf</h4>
-				           			<a href="">查看详情</a>
-				           		</div>
-				           	<h3 class="text-center" style="color:#fff;font-family: '微软雅黑';">杭州西湖</h3>
-				           	</div>
-				           </div>
-
-				  </div>
-
-				  <div class="col-md-6">
-					<div class="fdd">
-				          		 <div class="fe">
-				           		<img src="images/xia.jpg" class="img-rounded" id="kkl" />
-				           		<div class="fe-guo1"></div>
-				           		<div class="fe-guo">
-				           			<h3 class="text-center">杭州西湖</h3>
-				           			<p></p>
-				           			<h4>dsfdsfdsfdsfdsfsfdsfdsfdsfsdffsdfsdffsdf</h4>
-				           			<a href="">查看详情</a>
-				           		</div>
-				           	<h3 class="text-center" style="color:#fff;font-family: '微软雅黑';">杭州西湖</h3>
-				           	</div>
-				           </div>
-
-				  </div>
-
-				  <div class="col-md-6">
-					<div class="fdd">
-				          		 <div class="fe">
-				           		<img src="images/xia.jpg" class="img-rounded" id="kkl" />
-				           		<div class="fe-guo1"></div>
-				           		<div class="fe-guo">
-				           			<h3 class="text-center">杭州西湖</h3>
-				           			<p></p>
-				           			<h4>dsfdsfdsfdsfdsfsfdsfdsfdsfsdffsdfsdffsdf</h4>
-				           			<a href="">查看详情</a>
-				           		</div>
-				           	<h3 class="text-center" style="color:#fff;font-family: '微软雅黑';">杭州西湖</h3>
-				           	</div>
-				           </div>
-
-				  </div>
-
-				  <div class="col-md-6">
-					<div class="fdd">
-				          		 <div class="fe">
-				           		<img src="images/xia.jpg" class="img-rounded" id="kkl" />
-				           		<div class="fe-guo1"></div>
-				           		<div class="fe-guo">
-				           			<h3 class="text-center">杭州西湖</h3>
-				           			<p></p>
-				           			<h4>dsfdsfdsfdsfdsfsfdsfdsfdsfsdffsdfsdffsdf</h4>
-				           			<a href="">查看详情</a>
-				           		</div>
-				           	<h3 class="text-center" style="color:#fff;font-family: '微软雅黑';">杭州西湖</h3>
-				           	</div>
-				           </div>
-
-				  </div>
-
-
+ -->
+				
 		</div>
 	</div>
 </div>
 <!-- 景点 -->
-
-
-
-<script src="js/jquery-1.12.1.min.js"></script>
 <!-- 轮播图 -->
 <script>
            $('.banner ul li').hover(function(){//选择到li对象
@@ -308,6 +205,75 @@
 	}
 </script><!-- 获取登录用户名 -->
 
+<!-- 景区模板 -->
+<script id="out"  type="text/x-handlebars-template">
+	{{#each scenery}}
+		<div class="col-md-6">
+			<div class="fdd">
+				<div class="fe">
+					<img src="{{pic_1}}" class="img-rounded" />
+					<div class="fe-guo1"></div>
+					<div class="fe-guo">
+						<h3 class="text-center">{{name}}</h3>
+						<p></p>
+						<h4>{{location}}</h4>
+						<a href="fengjing1.html?id={{id}}">查看详情</a>
+					</div>
+					<h3 class="text-center" style="color:#fff;font-family: '微软雅黑';">{{name}}</h3>
+				</div>
+			</div>
+		</div>
+	{{/each}}
+</script>
+
+
+<!-- 景区类别 -->
+<script type="text/javascript">
+$(function(){
+	var _id = Arg('id')
+	var _type  = Arg('type')
+	if (_type == 'category') {
+		$.ajax({
+			url: 'scenery/category/' + _id,
+			type: 'get',
+			dataType: 'json',
+			success: function (data, status, xhr) {
+				console.log(data);
+				var source=$('#out').html();
+				var template=Handlebars.compile(source);
+				var d={'scenery':data};
+				$('#jing').html(template(d));
+			},
+		})
+	} else if (_type == 'region') {
+		$.ajax({
+			url: 'scenery/region/' + _id,
+			type: 'get',
+			dataType: 'json',
+			success: function (data, status, xhr) {
+				var source=$('#out').html();
+				var template=Handlebars.compile(source);
+				var d={'scenery':data};
+				$('#jing').html(template(d));
+			},
+		})
+	} else if (_type == 'season') {
+		$.ajax({
+			url: 'scenery/season/' + _id,
+			type: 'get',
+			dataType: 'json',
+			success: function (data, status, xhr) {
+				var source=$('#out').html();
+				var template=Handlebars.compile(source);
+				var d={'scenery':data};
+				$('#jing').html(template(d));
+			},
+		})
+	}
+})
+		
+</script>
+<!-- 景区类别 -->
 <!-- 搜索 -->
 <script type="text/javascript">
         	$('#submit').on('click',function(){

@@ -8,7 +8,6 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
 <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-
 <script src="js/handlebars-v4.0.5.js" type="text/javascript" ></script>
 <link rel="stylesheet" href="css/main.css"/>
 <script src="js/arg-1.3.js"></script>
@@ -35,8 +34,12 @@
 			</div>
 			<div class="col-md-4">
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Search" id="input">
-					<span class="input-group-addon"><a id="submit">搜索</a></span>
+					<input id="input" type="text" class="form-control" placeholder="Search" style="float: left;width: 200px;">
+                              <select id="s" style="height: 35px;">
+                                    <option value="1">美食</option>
+                                    <option value="2">景区</option>
+                              </select>
+                              <button type="button" class="btn btn-default" style="margin-top: -5px;"><a id="submit">搜索</a></button>
 				</div>
 				<!-- <div class="input-group">
 				      <input type="text" class="form-control" />
@@ -100,6 +103,7 @@
 		</div>
 	</div>
 </div>
+<!-- 美食模板 -->
 <script id="out" type="text/x-handlebars-template">
 	{{#each wad}}
 	<div class="col-md-6">
@@ -118,19 +122,36 @@
 	</div>
 	{{/each}}
 </script>
+<!-- 景区模板 -->
+<script  id="goout" type="text/x-handlebars-template">
+	{{#each sc}}
+	<div class="col-md-6">
+		<img src="{{pic_1}}" />
+	</div>
+	<div class="col-md-6">
+		<div class="wenzi">
+			<h2 ><a href="fengjing1.html?id={{id}}">{{name}}</a></h2>
+			<ul>
+		           	<li><!-- <strong>口味：</strong> --><span >{{season}}</span></li>
+		           	<li><!-- <strong>口味：</strong> --><span >{{location}}</span></li>
+		           	<li><!-- <strong>简介：</strong --><span>{{intro}}</span></li>
+		          </ul>
+		</div>
+	</div>
+	{{/each}}
+</script>
 
 <script type="text/javascript">
 $(function(){
   	$('#submit').on('click', function () {
-   		 console.log('1')
-	   		 $.ajax({
+   		 var _s=$('#s').val();
+   		 if(_s=='1'){
+   		 	 $.ajax({
 	    			  url:'wad/search',
 	    			  method:'post',
 	    			  data: {search: $('#input').val()},
 	    			  dataType:'json',
 	    			  success:function(data,status,xhr){
-	     			   	console.log('2');
-	      			 	 console.log(data[0]);
 	       			 	var source = $('#out').html();
 	       				var template = Handlebars.compile(source);
 	       			 	var da = {'wad': data};
@@ -140,32 +161,31 @@ $(function(){
 	       			 console.log(error);
 	     			 } 
 	   		 });
+   		 }
+   		 else if(_s=='2'){
+   		 	 $.ajax({
+	    			  url:'scenery/search',
+	    			  method:'post',
+	    			  data: {search: $('#input').val()},
+	    			  dataType:'json',
+	    			  success:function(data,status,xhr){
+	       			 	var source = $('#goout').html();
+	       				var template = Handlebars.compile(source);
+	       			 	var da = {'sc': data};
+	       			 	$('#sou').html(template(da));
+	       			 	console.log(data);
+	     			 },
+	     			 error:function(xhr,status,error){
+	       			 console.log(error);
+	     			 } 
+	   		 });
+   		 }
+	   		
 	   	
  	 });
 });
 </script> 
 
-<script type="text/javascript">
-	$(function(){
-			$.ajax({
-				url:'wad/search',
-				method:'post',
-				data: {search: $('#input').val()},		
-				dataType:'json',
-				success:function(data,status,xhr){
-					console.log('2');
-	      			 	 console.log(data[0]);
-	       			 	var source = $('#out').html();
-	       				var template = Handlebars.compile(source);
-	       			 	var d = {'wad': data};
-	       			 	$('#sou').html(template(d));
-	     			 },
-		
-
-			})
-		
-	})
-</script>
 
 <script type="text/javascript">
 	$(function(){
@@ -174,22 +194,42 @@ $(function(){
 		var inp=document.getElementById('input');
 		inp.value=s;
 		if(s){
-			 $.ajax({
-            		url:'wad/search',
-            		method:'post',
-           		 data: {search:s},
-          			  dataType:'json',
-            		success:function(data,status,xhr){    
-             		 var source = $('#out').html();
-              		var template = Handlebars.compile(source);
-             		 var da = {'wad': data};
-              		$('#sou').html(template(da));
-            	},
-           		 error:function(xhr,status,error){
-              		console.log(error);
-           	 }
+                if(Arg('type')=='food'){
+                   $.ajax({
+                url:'wad/search',
+                method:'post',
+                data: {search:s},
+                  dataType:'json',
+                success:function(data,status,xhr){    
+                 var source = $('#out').html();
+                  var template = Handlebars.compile(source);
+                 var da = {'wad': data};
+                  $('#sou').html(template(da));
+              },
+               error:function(xhr,status,error){
+                  console.log(error);
+             }
           });   
 
+                }
+                else if(Arg('type')=='scenery'){
+                   $.ajax({
+                url:'scenery/search',
+                method:'post',
+                data: {search:s},
+                  dataType:'json',
+                success:function(data,status,xhr){    
+                 var source = $('#goout').html();
+                  var template = Handlebars.compile(source);
+                 var da = {'sc': data};
+                  $('#sou').html(template(da));
+              },
+               error:function(xhr,status,error){
+                  console.log(error);
+             }
+          });   
+                }
+			
 		}
 	})
 </script>

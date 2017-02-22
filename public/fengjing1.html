@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/normalize.css"/>
 <script type="text/javascript" src="js/js.cookie-2.1.0.min.js"></script>
+<script type="text/javascript" src="js/handlebars-v4.0.5.js"></script>
 <link rel="stylesheet" href="css/main.css"/>
 <script src="js/arg-1.3.js"></script>
 
@@ -56,7 +57,7 @@
 		<div class="col-md-12">
 			<div class="col-md-6">
 				<h4 style="float: left; line-height: 50px; margin-top: -0px;" ><a href="index.html" style="color: #fff;text-decoration: none;">网站首页</a></h4>
-				<span  style="float: left; line-height: 50px; margin-left: 10px;">锅包肉</span>
+				<span  style="float: left; line-height: 50px; margin-left: 10px;"></span>
 			</div>
 			<div class="col-md-6">
 			</div>
@@ -71,17 +72,16 @@
 		<div class="row">
 		           <div class="col-md-6">
 		           	<div class="tupian">
-		           		<img src="images/paomo.jpg" class="img-rounded" id=img00 />
+		           		<img src="" class="img-rounded" id="tupian0"/>
 		           	</div>
 		           </div>
 		           <div class="col-md-6">
 		                      <div class="wenzi">
-		           	<h2 style="font-family: '微软雅黑'; color: #fff;" id="biao00"></h2>
+		           	<h2 style="font-family: '微软雅黑'; color: #fff;" id="name"></h2>
 		           	<ul>
-		           	           <li><strong>别名：</strong><span id="bie00"></span></li>
-		           		<li><strong>口味：</strong><span id="kou00"></span></li>
-		           		<li><strong>历史：</strong><span id="li00"></span></li>
-		           		<li><strong>简介：</strong><span id="jian00"></span></li>
+		           	           <li><strong></strong><span id="jijie"></span></li>
+		           		<li><strong></strong><span id="wei"></span></li>
+		           		<li><strong></strong><span id="jianjie"></span></li>
 		           	</ul>
 		           	</div>
 		           </div>
@@ -91,36 +91,41 @@
 
  <div class="xiangce">
 	<div class="container">
-		<div class="row">
-		          <div col-md-6>
+		<div class="row" id="tuji">
+		          <!-- <div class="col-md-6">
 		          		<div class="tupian">
-		           		<img src="images/paomo.jpg" class="img-rounded" id=img00 />
+		           		<img src="images/paomo.jpg" class="img-rounded" id="tu"/>
 		           	</div>
 		          </div>
-		          <div col-md-6>
+		          <div class="col-md-6">
 		          		<div class="wenzi">
-		           		<h2 style="font-family: '微软雅黑'; color: #fff;" id="biao00"></h2>
+		           		<h2 style="font-family: '微软雅黑'; color: #fff;" id="na"></h2>
 		           		<ul>
-			           	           <li><strong>别名：</strong><span id="bie00"></span></li>
-			           		<li><strong>口味：</strong><span id="kou00"></span></li>
-			           		<li><strong>历史：</strong><span id="li00"></span></li>
-			           		<li><strong>简介：</strong><span id="jian00"></span></li>
+			           	      <li><strong></strong><span id="ji"></span></li>
+			           		<li><strong></strong><span id="w"></span></li>
+			           		<li><strong></strong><span id="jia"></span></li>
 		           		</ul>
 		           	</div>
-		          </div>
+		          </div> -->
 		 </div>
 	</div>
 </div>
 
 
-
-
+<div class="ming" style="background-color: #000;">
+<div class="container">
+    <div class="row">
+            <div class="col-md-12">
+                   <h4 class="feifei text-center">当地特产</h4>
+           </div>
+  </div>
+</div>
+</div>
 <div class="fangwen">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-9">
-				<h4 class="feifei text-center">热门风景</h4>
-				<div class="col-md-4">
+		<div class="row" id="techan">
+			
+				<!-- <div class="col-md-4">
 					<div class="tuijian2">
 			<div class="ih-item circle colored effect13 from_left_and_right">
 				<a href="#">
@@ -182,57 +187,115 @@
                                 
                                 </a>
                             </div>
-				</div>
-			</div>
-			<div class="col-md-3">
-				<h4 class="wenwen">最近访问量</h4>
-				<div class="liang">
-					<ul class="zong">
-						<li><span>总浏览量：</span><a>215654</a></li>
-						<li><span>今日浏览量：</span><a>215654</a></li>
-					</ul>
-					<ul class="shijian">
-						<li><a>用户名</a></li>
-						<li><span>什么时间访问</span></li>
-
-					</ul>
-					<ul class="shijian">
-						<li><a>用户名</a></li>
-						<li><span>什么时间访问</span></li>
-
-					</ul>
-					<ul class="shijian">
-						<li><a>用户名</a></li>
-						<li><span>什么时间访问</span></li>
-
-					</ul>
-					<ul class="shijian">
-						<li><a>用户名</a></li>
-						<li><span>什么时间访问</span></li>
-
-					</ul>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
 </div>
 
 
+
+<!-- 相关吃喝 -->
+<script id="o" type="text/x-handlebars-template">
+{{#each eat}}
+<div class="col-md-4">
+<div class="tuijian2">
+      <div class="ih-item circle colored effect13 from_left_and_right">
+             <a href="#">
+                  <div class="img">
+                        <img src="{{pic_1}}" alt="">
+                  </div>
+                   <div class="info">
+                        <div class="info-back">
+                              <h3>{{taste}}</h3>
+                              <p>{{propose}}</p>
+                        </div>
+                  </div>
+            </a>
+       </div>
+             <h3 class="text-center" style=" color:#fff;font-family: '微软雅黑';">{{name}}</h3>
+             <a href="meishi.html?id={{id}}" class="jianjie col-md-12 text-center" style="font-family: '微软雅黑'; color: #fff;">{{intro}}</a>
+</div>
+</div>
+{{/each}}
+
+</script>
+<!-- 相关吃喝 -->
+<script type="text/javascript">
+  $(function(){
+      $.ajax({
+        url:'scenery/wad/'+Arg('id')+'/3',
+        type:'get',
+        dataType:'json',
+        success:function(data,status,xhr){
+            console.log(data);
+            var source = $('#o').html();
+            var template = Handlebars.compile(source);
+            var d = {'eat':data};
+            $('#techan').html(template(d));
+             },
+    
+
+      })
+    
+  })
+</script>
+<!-- 图集 -->
+<script id="out"  type="text/x-handlebars-template">
+{{#each scenery}}
+    <div class="col-md-6">
+            <div class="tupian">
+                  <img src="{{url}}" class="img-rounded"/>
+            </div>
+      </div>
+      <div class="col-md-6">
+            <div class="wenzi">
+                  <h2 style="font-family: '微软雅黑'; color: #fff;"></h2>
+                  <ul>
+                      <li><strong></strong><span style="color: #fff;">{{intro}}</span></li>
+                      <!-- <li><strong></strong><span></span></li> -->
+                 </ul>
+            </div>
+      </div>
+{{/each}}
+</script>
+  
+<!-- 图集 -->
+<script type="text/javascript">
+  $(function(){
+      $.ajax({
+        url:'scenery/'+Arg('id')+'/picset',
+        type:'get',
+        dataType:'json',
+        success:function(data,status,xhr){
+            console.log(data[0]);
+            var source = $('#out').html();
+            var template = Handlebars.compile(source);
+            var d = {'scenery':data};
+            $('#tuji').html(template(d));
+             },
+    
+
+      })
+    
+  })
+</script>
+
+
 <!--美食传数据-->
 <script type="text/javascript">
 	$(function(){
 		$.ajax({
-			url:'wad/'+Arg('id'),
+			url:'scenery/'+Arg('id'),
 			method:'get',
 			dataType:'json',
 			success:function(data,status,xhr){
 				console.log(data);
-					$('#biao00').text(data[0].name);
-					$('#bie00').text(data[0].alias);
-					$('#kou00').text(data[0].taste);
-					$('#li00').text(data[0].history);
-					$('#jian00').text(data[0].intro);
-					$('#img00').attr('src',data[0].pic_2);
+					$('#name').text(data[0].name);
+					$('#jijie').text('季节：'+data[0].season);
+                              $('#wei').text('位置：'+data[0].location);
+                              $('#jianjie').text('简介：'+data[0].intro);
+					$('#tupian0').attr('src',data[0].pic_1);
 			},
 			
 		})
@@ -240,15 +303,6 @@
 
 </script>
 <!--美食传数据-->
-<!--详情页的访问记录-->
-
-
-
-<script> 
-// $(function () {
-	// $.get('log/browse/wad/' + Arg('id'), function () {})
-// })
- </script> 
 <script>
     var id=Arg('id')
     $(function(){
@@ -270,6 +324,26 @@
 	$(this).stop().animate({width:'1055px'},500).siblings().stop().animate({width:'100px'},500);
 	});
 </script>
+<!-- 热门风景访问记录 -->
+<script>
+    var id=Arg('id')
+    $(function(){
+        $.ajax({
+            url:'log/browse/scenery/'+Arg('id'),
+            method:'get',
+            success:function(data,status,xhr){
+
+            },
+            error:function(xhr,status,error){},
+        })
+
+    })
+</script>
+
+
+
+
+
 <!--猜你喜欢美食-->
 <script type="text/javascript">
 	$(function(){

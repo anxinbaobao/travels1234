@@ -3,6 +3,100 @@ var mysql = require('../util/mysql')
 
 var router = express.Router()
 
+// 搜索结果数
+router.route('/search/counter')
+  .post(function (request, response) {
+    mysql.pool.getConnection(function (error, connection) {
+      if (error) {
+        console.error(error)
+        response.send({message: 'ERROR_ON_CONNECT_TO_DATABASE'})
+        return
+      }
+      let sql = `
+      select id, count(*) as counter
+      from scenery as s, (
+        select k, v from kv where c = "景点类别"
+      ) as c, (
+        select k, v from kv where c = "景点地区"
+      ) as r
+      where c.k = s.category_id
+        and r.k = s.region_id
+        and (
+          locate(?, c.v) > 0
+          or locate(?, r.v) > 0
+          or locate(?, season) > 0
+          or locate(?, name) > 0
+          or locate(?, location) > 0
+          or locate(?, intro) > 0
+        )
+      limit 1
+      `
+      let param = [
+        request.body.search
+        , request.body.search
+        , request.body.search
+        , request.body.search
+        , request.body.search
+        , request.body.search
+      ]
+      connection.query({sql: sql, values: param}, function (error, data) {
+        connection.release()
+        if (error) {
+          console.error(error)
+          response.send({message: 'QUERY_FAILED'})
+          return
+        }
+        response.send(data[0])
+      })
+    })
+  })
+
+// 搜索结果
+router.route('/search').post(function (request, response) {
+  mysql.pool.getConnection(function (error, connection) {
+    if (error) {
+      console.error(error)
+      response.send({message: 'ERROR_ON_CONNECT_TO_DATABASE'})
+      return
+    }
+    let sql = `
+    select id, c.v as category, r.v as region, season, name, location, intro, pic_1, pic_2
+    from scenery as s, (
+      select k, v from kv where c = "景点类别"
+    ) as c, (
+      select k, v from kv where c = "景点地区"
+    ) as r
+    where c.k = s.category_id
+      and r.k = s.region_id
+      and (
+        locate(?, c.v) > 0
+        or locate(?, r.v) > 0
+        or locate(?, season) > 0
+        or locate(?, name) > 0
+        or locate(?, location) > 0
+        or locate(?, intro) > 0
+      )
+    `
+    let param = [
+      request.body.search
+      , request.body.search
+      , request.body.search
+      , request.body.search
+      , request.body.search
+      , request.body.search
+    ]
+    connection.query({sql: sql, values: param}, function (error, data) {
+      connection.release()
+      if (error) {
+        console.error(error)
+        response.send({message: 'QUERY_FAILED'})
+        return
+      }
+      response.send(data)
+    })
+  })
+})
+
 // 图集
 router.route('/:id/picset')
   .get(function (request, response) {
@@ -13,7 +107,7 @@ router.route('/:id/picset')
         return
       }
       let sql = `
-      select id, item_id, category, url, intro, date, time
+      select id, item_id, category, url, name, intro, date, time
       from picture_set
       where item_id = ?
         and category = 'scenery'
@@ -208,7 +302,7 @@ router.route('/:id')
     })
   })
 
-// 指定类别的所有景点
+// 指定地区的所有景点
 router.route('/region/:id')
   .get(function (request, response) {
     mysql.pool.getConnection(function (error, connection) {

@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script src="js/babel.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/material.min.js"></script>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
+</head>
+<body>
+<div id="hello"></div>
+<div id="hello-1"></div>
+<div class="timer" id="timer"></div>
+<script type="text/babel">
+      function tick(){
+            const element = (
+                  <div>
+                        <h3>现在是{new Date().toLocaleTimeString()}</h3>
+                  </div>
+            );
+            ReactDOM.render(
+            element,
+            document.getElementById('timer')
+            );
+      }
+      setInterval(tick,1000);
+</script>
+<script type="text/javascript">
+      const e = React.createElement
+      ReactDOM.render(
+            e('h3',null,'Hello,World!'),
+            document.getElementById('hello')
+            )
+</script>
+<script type="text/babel">
+      class Hello extends React.Component{
+             render(){
+                    return React.createElement('h3',{
+                    id:'hll',
+                    className:'123'
+                    },`Hello ${this.props.text}`);
+          }
+      }
+      ReactDOM.render(
+            React.createElement(Hello,{text:new Date().toLocaleTimeString()},null),
+            document.getElementById('hello-1')
+      );
+</script>
+
+</body>
+</html>

@@ -54,15 +54,17 @@
 			</div>
 			<div class="col-md-4">
 				<div class="input-group">
-					
-					<input type="text" class="form-control" placeholder="Search" id="input">
-					<span class="input-group-addon"><a id="submit">搜索</a></span>
+					<input id="input" type="text" class="form-control" placeholder="Search" style="float: left;width: 200px;">
+                              <select id="s" style="height: 35px;">
+                                    <option value="1">美食</option>
+                                    <option value="2">景区</option>
+                              </select>
+                              <button type="button" class="btn btn-default" style="margin-top: -5px;"><a id="submit">搜索</a></button>
+
 				</div>
 			</div>
 			<div class="col-md-4">
-				<ul class="nav-right" id="yonghu">
-					<li><a href="#">登录</a></li>
-					<li><a href="#">注册</a></li>
+				<ul id="yong" class="nav-right">
 				</ul>
 				<span class="telphone">联系我们:110</span>
 
@@ -97,7 +99,7 @@
 								<li><a href="">秋 季</a></li>
 								<li><a href="">冬 季</a></li>
 							</ul>
-                                     				 <ul class="diqu">
+                                     	 <ul class="diqu">
 								<li><a href="">东北</a></li>
 								<li><a href="">北</a></li>
 								<li><a href="">西北</a></li>
@@ -108,6 +110,17 @@
 								<li><a href="">南</a></li>
 								<li><a href="">西南</a></li>
 							</ul>
+                                            <ul class="leibie">
+                                                  <li><a href="">湖泊风景区</a></li>
+                                                  <li><a href="">山岳风景区</a></li>
+                                                  <li><a href="">森林风景区</a></li>
+                                                  <li><a href="">山水风景区</a></li>
+                                                  <li><a href="">海滨风景区</a></li>
+                                                  <li><a href="">休闲疗养圣地</a></li>
+                                                  <li><a href="">宗教名胜区</a></li>
+                                                  <li><a href="">革命纪念地</a></li>
+                                                
+                                           </ul>
 						</div>
 					</div>
 				</div>
@@ -121,7 +134,7 @@
 					<div class="ih-item circle colored effect13 from_left_and_right">
 						<a href="#">
                                            			<div class="img">
-                                           				<img src="images/1.jpg" alt="img">
+                                           				<img src="images/hubo1.jpg" alt="img">
                                            			</div>
                 						<div class="info">
                     							<div class="info-back">
@@ -132,29 +145,7 @@
                 						</div>
            				 	</a>
            				 	<div class="huhu">
-           				 		<h3 class="text-center" ><a href="#" style="color: #fff;">湖泊风景区</a></h3>
-           				 	</div>
-                                                      	
-           				</div>
-           			</div>
-			</div>
-			<div class="col-md-3">
-				<div class="jingdian1">
-					<div class="ih-item circle colored effect13 from_left_and_right">
-						<a href="#">
-                                           			<div class="img">
-                                           				<img src="images/1.jpg" alt="img">
-                                           			</div>
-                						<div class="info">
-                    							<div class="info-back">
-                       						 	<h3>Heading here</h3>
-
-                       						 	<p>Description goes here</p>
-                   				 			</div>
-                						</div>
-           				 	</a>
-           				 	<div class="huhu">
-           				 		<h3 class="text-center" ><a href="#" style="color: #fff;">山岳风景区</a></h3>
+           				 		<h3 class="text-center" ><a href="fengjing.html?id=1&type=category" style="color: #fff;">湖泊风景区</a></h3>
            				 	</div>
            				</div>
            			</div>
@@ -164,7 +155,7 @@
 					<div class="ih-item circle colored effect13 from_left_and_right">
 						<a href="#">
                                            			<div class="img">
-                                           				<img src="images/1.jpg" alt="img">
+                                           				<img src="images/shanyue1.jpg" alt="img">
                                            			</div>
                 						<div class="info">
                     							<div class="info-back">
@@ -175,7 +166,7 @@
                 						</div>
            				 	</a>
            				 	<div class="huhu">
-           				 		<h3 class="text-center" ><a href="#" style="color: #fff;">森林风景区</a></h3>
+           				 		<h3 class="text-center" ><a href="fengjing.html?id=2&type=category" style="color: #fff;">山岳风景区</a></h3>
            				 	</div>
            				</div>
            			</div>
@@ -185,7 +176,7 @@
 					<div class="ih-item circle colored effect13 from_left_and_right">
 						<a href="#">
                                            			<div class="img">
-                                           				<img src="images/1.jpg" alt="img">
+                                           				<img src="images/senlin1.jpg" alt="img">
                                            			</div>
                 						<div class="info">
                     							<div class="info-back">
@@ -196,7 +187,7 @@
                 						</div>
            				 	</a>
            				 	<div class="huhu">
-           				 		<h3 class="text-center" ><a href="#" style="color: #fff;">山水风景区</a></h3>
+           				 		<h3 class="text-center" ><a href="fengjing.html?id=3&type=category" style="color: #fff;">森林风景区</a></h3>
            				 	</div>
            				</div>
            			</div>
@@ -206,7 +197,7 @@
 					<div class="ih-item circle colored effect13 from_left_and_right">
 						<a href="#">
                                            			<div class="img">
-                                           				<img src="images/1.jpg" alt="img">
+                                           				<img src="images/shanshui1.jpg" alt="img">
                                            			</div>
                 						<div class="info">
                     							<div class="info-back">
@@ -217,7 +208,28 @@
                 						</div>
            				 	</a>
            				 	<div class="huhu">
-           				 		<h3 class="text-center" ><a href="#" style="color: #fff;">海滨风景区</a></h3>
+           				 		<h3 class="text-center" ><a href="fengjing.html?id=4&type=category" style="color: #fff;">山水风景区</a></h3>
+           				 	</div>
+           				</div>
+           			</div>
+			</div>
+			<div class="col-md-3">
+				<div class="jingdian1">
+					<div class="ih-item circle colored effect13 from_left_and_right">
+						<a href="#">
+                                           			<div class="img">
+                                           				<img src="images/haibin1.jpg" alt="img">
+                                           			</div>
+                						<div class="info">
+                    							<div class="info-back">
+                       						 	<h3>Heading here</h3>
+
+                       						 	<p>Description goes here</p>
+                   				 			</div>
+                						</div>
+           				 	</a>
+           				 	<div class="huhu">
+           				 		<h3 class="text-center" ><a href="fengjing.html?id=5&type=category" style="color: #fff;">海滨风景区</a></h3>
            				 	</div>
            				</div>
            			</div>
@@ -228,7 +240,7 @@
 					<div class="ih-item circle colored effect13 from_left_and_right">
 						<a href="#">
                                            			<div class="img">
-                                           				<img src="images/1.jpg" alt="img">
+                                           				<img src="images/xiuxian1.jpg" alt="img">
                                            			</div>
                 						<div class="info">
                     							<div class="info-back">
@@ -239,7 +251,7 @@
                 						</div>
            				 	</a>
            				 	<div class="huhu">
-           				 		<h3 class="text-center" ><a href="#" style="color: #fff;">休闲疗养避暑胜地</a></h3>
+           				 		<h3 class="text-center" ><a href="fengjing.html?id=6&type=category" style="color: #fff;">休闲疗养避暑胜地</a></h3>
            				 	</div>
            				</div>
            			</div>
@@ -249,7 +261,7 @@
 					<div class="ih-item circle colored effect13 from_left_and_right">
 						<a href="#">
                                            			<div class="img">
-                                           				<img src="images/1.jpg" alt="img">
+                                           				<img src="images/simiao1.jpg" alt="img">
                                            			</div>
                 						<div class="info">
                     							<div class="info-back">
@@ -260,7 +272,7 @@
                 						</div>
            				 	</a>
            				 	<div class="huhu">
-           				 		<h3 class="text-center" ><a href="#" style="color: #fff;">宗教寺庙名胜区</a></h3>
+           				 		<h3 class="text-center" ><a href="fengjing.html?id=7&type=category" style="color: #fff;">宗教寺庙名胜区</a></h3>
            				 	</div>
            				</div>
            			</div>
@@ -270,7 +282,7 @@
 					<div class="ih-item circle colored effect13 from_left_and_right">
 						<a href="#">
                                            			<div class="img">
-                                           				<img src="images/1.jpg" alt="img">
+                                           				<img src="images/geming1.jpg" alt="img">
                                            			</div>
                 						<div class="info">
                     							<div class="info-back">
@@ -281,7 +293,7 @@
                 						</div>
            				 	</a>
            				 	<div class="huhu">
-           				 		<h3 class="text-center" ><a href="#" style="color: #fff;">革命纪念地</a></h3>
+           				 		<h3 class="text-center" ><a href="fengjing.html?id=8&type=category" style="color: #fff;">革命纪念地</a></h3>
            				 	</div>
            				</div>
            			</div>
@@ -291,6 +303,137 @@
 	</div>
 </div>
 <!-- 景点 -->
+
+<!-- 热门景点 -->
+<div class="remen1">
+  <div class="container"> 
+    <div class="row">
+      <h1 class="text-center" style="font-family: '微软雅黑';">热门景点</h1>
+      <h3 class="text-center" style="font-family: '微软雅黑';">你的最爱在这里你的最爱在这里</h3>
+      <div class="btn-group btn-group-justified">
+        <div id="but0" class="btn-group">
+          <button type="button" class="btn btn-info">TOP1</button>
+        </div>
+        <div id="but1" class="btn-group">
+          <button type="button" class="btn btn-info">TOP2</button>
+        </div>
+        <div id="but2" class="btn-group">
+          <button type="button" class="btn btn-info">TOP3</button>
+        </div>
+       </div>
+       <div class="re0" id="jiqu0">
+                 <div class="col-md-6">
+                  <div class="top1">
+                    <img src=" " class="img-rounded" id="tuitu0" />
+                     <div class="jingguo">
+                      <div class="xia">
+                        <ul>
+                          <li><a href="" id="jijie0"></a></li>
+                          <li><a href="" id="weizhi0"></a></li>
+                        </ul>
+                        <h4 class="text-center"  style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="jianjie0"></h4>
+                      </div>
+                     </div>
+                  </div>
+                                                      
+                  <h3 class="text-center" style="font-family: '微软雅黑';" id="mname0"></h3>
+                 </div>
+                 <div class="col-md-6">
+                  <div class="top1">
+                    <img src="" class="img-rounded"  id="tuitu1"/>
+                     <div class="jingguo">
+                      <div class="xia">
+                        <ul>
+                          <li><a href="" id="jijie1"></a></li>
+                          <li><a href="" id="weizhi1"></a></li>
+                        </ul>
+                        <hr/>
+                        <h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="jianjie1"></h4>
+                      </div>
+                     </div>
+                  </div>
+                                                      
+                  <h3 class="text-center" style="font-family: '微软雅黑';" id="mname1"></h3>
+                 </div>
+                 
+       </div>
+       <div class="re1" id="jiqu1">
+                 <div class="col-md-6">
+                  <div class="top1">
+                    <img src="" class="img-rounded"  id="tuitu2"/>
+                     <div class="jingguo">
+                      <div class="xia">
+                        <ul>
+                          <li><a href="" id="jijie2"></a></li>
+                          <li><a href="" id="weizhi2"></a></li>
+                        </ul>
+                        <hr/>
+                        <h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="jianjie2"></h4>
+                      </div>
+                     </div>
+                  </div>
+                                                      
+                  <h3 class="text-center" style="font-family: '微软雅黑';" id="mname2"></h3>
+                 </div>
+                <div class="col-md-6">
+                  <div class="top1">
+                    <img src="" class="img-rounded"  id="tuitu3"/>
+                     <div class="jingguo">
+                      <div class="xia">
+                        <ul>
+                          <li><a href="" id="jijie3"></a></li>
+                          <li><a href="" id="weizhi3"></a></li>
+                        </ul>
+                        <hr/>
+                        <h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="jianjie3"></h4>
+                      </div>
+                     </div>
+                  </div>
+                                                      
+                  <h3 class="text-center" style="font-family: '微软雅黑';" id="mname3"></h3>
+                 </div>
+       </div>
+       <div class="re2" id="jiqu2">
+                  <div class="col-md-6">
+                  <div class="top1">
+                    <img src="" class="img-rounded" id="tuitu4"/>
+                     <div class="jingguo">
+                      <div class="xia">
+                        <ul>
+                          <li><a href="" id="jijie4"></a></li>
+                          <li><a href="" id="weizhi4"></a></li>
+                        </ul>
+                        <h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="jianjie4"></h4>
+                      </div>
+                     </div>
+                  </div>
+                                                      
+                  <h3 class="text-center" style="font-family: '微软雅黑';" id="mname4"></h3>
+                 </div>
+                 <div class="col-md-6">
+                  <div class="top1">
+                    <img src="" class="img-rounded" id="tuitu5"/>
+                     <div class="jingguo">
+                      <div class="xia">
+                        <ul>
+                          <li><a href="" id="jijie5"></a></li>
+                          <li><a href="" id="weizhi5"></a></li>
+                        </ul>
+                        <h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="jianjie5"></h4>
+                      </div>
+                     </div>
+                  </div>
+                                                      
+                  <h3 class="text-center" style="font-family: '微软雅黑';" id="mname5"></h3>
+                 </div>
+       </div>
+  </div>
+</div>
+<!-- 热门景点 -->
+
+
+
+
 <div class="tuijian1">
 	<div class="container" style="background-color: #000;">
 		<div class="row">
@@ -316,7 +459,7 @@
                                                                  </a>
                                                        </div>
                                                        <h3 id="caiming0" class="text-center" style=" color:#fff;font-family: '微软雅黑';"></h3>
-                                                      <a href="#" id="jie0" class="jianjie col-md-12 text-center" style="font-family: '微软雅黑'; color: #fff;"></a>
+                                                      <a href="#" id="jie0" class="jianjie col-md-12 text-center" style="font-family: '微软雅黑'; color: #fff; "></a>
                                             </div>
 		           </div>
 
@@ -362,10 +505,10 @@
 			           <div class="tuijian2">
 			                      <div class="ih-item circle colored effect13 from_left_and_right">
 				                      <a href="#">
-                                                                            <div class="img">
-                                                                                      <img src=" " id="img3"  alt="img">
-                                                                            </div>
-                                                                           <div class="info">
+                                                <div class="img">
+                                                      <img src=" " id="img3"  alt="img">
+                                                 </div>
+                                                <div class="info">
                                                                                       <div class="info-back">
                                                                                                  <h3 id="kouwei3"></h3>
                                                                                                  <p id="shihe3"></p>
@@ -469,134 +612,138 @@
 
 
 
-<div class="remen1">
-	<div class="container"> 
-		<div class="row">
-			<h1 class="text-center" style="font-family: '微软雅黑';">热门美食</h1>
-			<h3 class="text-center" style="font-family: '微软雅黑';">你的最爱在这里你的最爱在这里</h3>
-			<div class="btn-group btn-group-justified">
-				<div id="btn0" class="btn-group">
-					<button type="button" class="btn btn-info">TOP1</button>
-				</div>
-				<div id="btn1" class="btn-group">
-					<button type="button" class="btn btn-info">TOP2</button>
-				</div>
-				<div  id="btn2"class="btn-group">
-					<button type="button" class="btn btn-info">TOP3</button>
-				</div>
-			 </div>
-			 <div class="re0" id="re0">
-			           <div class="col-md-6">
-			           	<div class="top1">
-			           		<img src=" " class="img-rounded" id="immg00" />
-			           		 <div class="jingguo">
-			           		 	<div class="xia">
-			           		 		<ul>
-			           		 			<li><a href="" id="diqu00"></a></li>
-			           		 			<li><a href="" id="weidao00"></a></li>
-			           		 		</ul>
-			           		 		<h4 class="text-center"  style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="lishi00"></h4>
-			           		 	</div>
-			           		 </div>
-			           	</div>
+<div class="remen2">
+  <div class="container"> 
+    <div class="row">
+      <h1 class="text-center" style="font-family: '微软雅黑';">热门美食</h1>
+      <h3 class="text-center" style="font-family: '微软雅黑';">你的最爱在这里你的最爱在这里</h3>
+      <div class="btn-group btn-group-justified">
+        <div id="btn0" class="btn-group">
+          <button type="button" class="btn btn-info">TOP1</button>
+        </div>
+        <div id="btn1" class="btn-group">
+          <button type="button" class="btn btn-info">TOP2</button>
+        </div>
+        <div  id="btn2" class="btn-group">
+          <button type="button" class="btn btn-info">TOP3</button>
+        </div>
+       </div>
+       <div class="re0" id="re0">
+                 <div class="col-md-6">
+                  <div class="top1">
+                    <img src=" " class="img-rounded" id="immg00" />
+                     <div class="jingguo">
+                      <div class="xia">
+                        <ul>
+                          <li><a href="" id="diqu00"></a></li>
+                          <li><a href="" id="weidao00"></a></li>
+                        </ul>
+                        <h4 class="text-center"  style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="lishi00"></h4>
+                      </div>
+                     </div>
+                  </div>
                                                       
-			           	<h3 class="text-center" style="font-family: '微软雅黑';" id="ming00"></h3>
-			           </div>
-			           <div class="col-md-6">
-			           	<div class="top1">
-			           		<img src="" class="img-rounded" id="immg01" />
-			           		 <div class="jingguo">
-			           		 	<div class="xia">
-			           		 		<ul>
-			           		 			<li><a href="" id="diqu01"></a></li>
-			           		 			<li><a href="" id="weidao01"></a></li>
-			           		 		</ul>
-			           		 		<hr/>
-			           		 		<h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="lishi01"></h4>
-			           		 	</div>
-			           		 </div>
-			           	</div>
+                  <h3 class="text-center" style="font-family: '微软雅黑';" id="ming00"></h3>
+                 </div>
+                 <div class="col-md-6">
+                  <div class="top1">
+                    <img src="" class="img-rounded" id="immg01" />
+                     <div class="jingguo">
+                      <div class="xia">
+                        <ul>
+                          <li><a href="" id="diqu01"></a></li>
+                          <li><a href="" id="weidao01"></a></li>
+                        </ul>
+                        <hr/>
+                        <h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="lishi01"></h4>
+                      </div>
+                     </div>
+                  </div>
                                                       
-			           	<h3 class="text-center" style="font-family: '微软雅黑';" id="ming01"></h3>
-			           </div>
-			           
-			 </div>
-			 <div class="re1" id="re1">
-			           <div class="col-md-6">
-			           	<div class="top1">
-			           		<img src="" class="img-rounded"  id="immg02"/>
-			           		 <div class="jingguo">
-			           		 	<div class="xia">
-			           		 		<ul>
-			           		 			<li><a href="" id="diqu02"></a></li>
-			           		 			<li><a href="" id="weidao02"></a></li>
-			           		 		</ul>
-			           		 		<hr/>
-			           		 		<h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="lishi02"></h4>
-			           		 	</div>
-			           		 </div>
-			           	</div>
+                  <h3 class="text-center" style="font-family: '微软雅黑';" id="ming01"></h3>
+                 </div>
+                 
+       </div>
+       <div class="re1" id="re1">
+                 <div class="col-md-6">
+                  <div class="top1">
+                    <img src="" class="img-rounded"  id="immg02"/>
+                     <div class="jingguo">
+                      <div class="xia">
+                        <ul>
+                          <li><a href="" id="diqu02"></a></li>
+                          <li><a href="" id="weidao02"></a></li>
+                        </ul>
+                        <hr/>
+                        <h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="lishi02"></h4>
+                      </div>
+                     </div>
+                  </div>
                                                       
-			           	<h3 class="text-center" style="font-family: '微软雅黑';" id="ming02"></h3>
-			           </div>
-			          <div class="col-md-6">
-			           	<div class="top1">
-			           		<img src="" class="img-rounded" id="immg03"/>
-			           		 <div class="jingguo">
-			           		 	<div class="xia">
-			           		 		<ul>
-			           		 			<li><a href=""  id="diqu03"></a></li>
-			           		 			<li><a href=""  id="weidao03"></a></li>
-			           		 		</ul>
-			           		 		<hr/>
-			           		 		<h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="lishi03"></h4>
-			           		 	</div>
-			           		 </div>
-			           	</div>
+                  <h3 class="text-center" style="font-family: '微软雅黑';" id="ming02"></h3>
+                 </div>
+                <div class="col-md-6">
+                  <div class="top1">
+                    <img src="" class="img-rounded" id="immg03"/>
+                     <div class="jingguo">
+                      <div class="xia">
+                        <ul>
+                          <li><a href=""  id="diqu03"></a></li>
+                          <li><a href=""  id="weidao03"></a></li>
+                        </ul>
+                        <hr/>
+                        <h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="lishi03"></h4>
+                      </div>
+                     </div>
+                  </div>
                                                       
-			           	<h3 class="text-center" style="font-family: '微软雅黑';" id="ming03"></h3>
-			           </div>
-			 </div>
-			 <div class="re2" id="re2">
-			            <div class="col-md-6">
-			           	<div class="top1">
-			           		<img src="" class="img-rounded"  id="immg04"/>
-			           		 <div class="jingguo">
-			           		 	<div class="xia">
-			           		 		<ul>
-			           		 			<li><a href=""  id="diqu04"></a></li>
-			           		 			<li><a href=""  id="weidao04"></a></li>
-			           		 		</ul>
-			           		 		<h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="lishi04"></h4>
-			           		 	</div>
-			           		 </div>
-			           	</div>
+                  <h3 class="text-center" style="font-family: '微软雅黑';" id="ming03"></h3>
+                 </div>
+       </div>
+       <div class="re2" id="re2">
+                  <div class="col-md-6">
+                  <div class="top1">
+                    <img src="" class="img-rounded"  id="immg04"/>
+                     <div class="jingguo">
+                      <div class="xia">
+                        <ul>
+                          <li><a href=""  id="diqu04"></a></li>
+                          <li><a href=""  id="weidao04"></a></li>
+                        </ul>
+                        <h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="lishi04"></h4>
+                      </div>
+                     </div>
+                  </div>
                                                       
-			           	<h3 class="text-center" style="font-family: '微软雅黑';" id="ming04"></h3>
-			           </div>
-			           <div class="col-md-6">
-			           	<div class="top1">
-			           		<img src="" class="img-rounded" id="immg05"/>
-			           		 <div class="jingguo">
-			           		 	<div class="xia">
-			           		 		<ul>
-			           		 			<li><a href="" id="diqu05"></a></li>
-			           		 			<li><a href="" id="weidao05"></a></li>
-			           		 		</ul>
-			           		 		<h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="lishi05"></h4>
-			           		 	</div>
-			           		 </div>
-			           	</div>
+                  <h3 class="text-center" style="font-family: '微软雅黑';" id="ming04"></h3>
+                 </div>
+                 <div class="col-md-6">
+                  <div class="top1">
+                    <img src="" class="img-rounded" id="immg05"/>
+                     <div class="jingguo">
+                      <div class="xia">
+                        <ul>
+                          <li><a href="" id="diqu05"></a></li>
+                          <li><a href="" id="weidao05"></a></li>
+                        </ul>
+                        <h4 class="text-center" style="width:500px;color: #fff; float:left;margin-left: 20px; border-top: solid 1px #fff; padding-top: 10px;" id="lishi05"></h4>
+                      </div>
+                     </div>
+                  </div>
                                                       
-			           	<h3 class="text-center" style="font-family: '微软雅黑';" id="ming05"></h3>
-			           </div>
-			           
-			 </div>
-	</div>
+                  <h3 class="text-center" style="font-family: '微软雅黑';" id="ming05"></h3>
+                 </div>
+                 
+       </div>
+  </div>
 </div>
 
 
 <script src="js/jquery-1.12.1.min.js"></script>
+<script src="js/babel.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/react.min.js"></script>
+<script src="js/react-dom.min.js"></script>
 <!-- 轮播图 -->
 <script>
            $('.banner ul li').hover(function(){//选择到li对象
@@ -604,6 +751,56 @@
 	});
 </script><!-- 轮播图 -->
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+<!-- 搜索 -->
+<script type="text/javascript">
+    $(function(){
+      $('#submit').on('click',function(){
+             var _s=$('#s').val();
+             if(_s=='1'){
+            $.ajax({
+                    url:'wad/search/counter',
+                   data:{search:$('#input').val()},
+                   dataType:'json',
+                    type:'post',
+                    success:function(data,status,xhr){
+                    if(data.counter==1){
+                    window.location.href='meishi.html?id='+data.id;}
+                    else if(data.counter>1){
+                    window.location.href='search.html?search='+$('#input').val()+'&type=food';
+                }
+                else {alert('knkn')}
+              },
+               error:function(xhr,status,error){
+                    console.log(error);
+               } 
+            })
+
+               }
+               else if(_s=='2'){
+                $.ajax({
+                    url:'scenery/search/counter',
+                   method:'post',
+                   data:{search:$('#input').val()},
+                   dataType:'json',
+                    success:function(data,status,xhr){
+                    if(data.counter==1){
+                    window.location.href='fengjing1.html?id='+data.id;}
+                    else if(data.counter>1){
+                    window.location.href='search.html?search='+$('#input').val()+'&type=scenery';
+
+                }
+                else {alert('656')}
+              },
+               error:function(xhr,status,error){
+                    console.log(error);
+               } 
+            })
+               }
+        })
+    })
+</script>
+
 <!--推荐美食传数据-->
 <script type="text/javascript">
 	$(function(){
@@ -630,9 +827,10 @@
 	})
 </script>
 <!--推荐美食传数据-->
+
 <!--热门美食按钮切换-->
 <script type="text/javascript">
-	var anniu0=document.getElementById('btn0');
+	     var anniu0=document.getElementById('btn0');
            var liebiao0=document.getElementById('re0');
            var anniu1=document.getElementById('btn1');
            var liebiao1=document.getElementById('re1');
@@ -654,6 +852,111 @@
 			liebiao2.style.display='block';
 			}
 </script><!--热门美食按钮切换-->
+<!-- 热门景区按钮切换 -->
+<script type="text/javascript">
+  var bun0=$('#but0');
+  var bun1=$('#but1');
+  var bun2=$('#but2');
+  var jingqu0=$('#jiqu0');
+  var jingqu1=$('#jiqu1');
+  var jingqu1=$('#jiqu2');
+  bun0.onclick=function(){
+     jingqu0.style.display='none';
+      jingqu1.style.display='block';
+     jingqu2.style.display='none';
+      }
+      bun1.onclick=function(){
+      jingqu0.style.display='none';
+      jingqu1.style.display='block';
+      jingqu2.style.display='none';
+      }
+       bun2.onclick=function(){
+      jingqu0.style.display='none';
+      jingqu1.style.display='none';
+      jingqu2.style.display='block';
+      }
+
+</script>
+<!-- 热门景区按钮切换 -->
+<!-- 获取用户名、退出登录 -->
+<script type="text/babel">
+  function UserGreeting(props){
+       return(
+              <div>
+                   <ul>
+                          <li> <a className="huanying">欢迎您：{props.nickname}</a></li>
+                          <li><a href="login.html" className="denglu">退出登录</a></li>
+                   </ul>
+              </div>
+       )
+  }
+  function LoggedOut(props){
+       return(
+              <div>
+                    <a href="login.html">请登录</a>&nbsp;
+                    <a href="register.html">注册</a>
+              </div>
+       )
+  }
+  function GuestGreeting(props){
+       return (
+             <div>
+                    <a href="register.html">注册</a>
+                    <a href="login.html">登录</a>
+             </div>
+       )
+  }
+  function Greeting(props){
+        const isLoggedIn=props.isLoggedIn
+              if (isLoggedIn){
+                    return <UserGreeting/>;
+              }
+              return <GuestGreeting/>;
+  }
+  class LoginControl extends React.Component{
+       constructor(props){
+              super(props)
+              this.state={isLoggedIn:false,nickname:''}
+       }
+       componentDidMount(){
+              let user = Cookies.get('user')
+                    if(user){
+                          this.request=$.get('/user/info',function(data){
+                                console.log(data);
+                                      this.setState({isLoggedIn:true,nickname:data.nickname})
+                          }.bind(this))
+                    }
+                    else{
+                          this.setState({isLoggedIn:false,nickname:''})
+                    }
+       }
+       componentWillUnmount(){
+              this.request.abort();
+       }
+       render(){
+              const isLoggedIn = this.state.isLoggedIn
+                    let e=null;
+                    if (isLoggedIn){
+                         e=this.state.nickname
+              }
+              else{
+                   e=''
+              }
+              return(
+                  <div>
+                          <Greeting isLoggedIn={isLoggedIn}/>
+                          {e}
+                  </div>
+              )
+       }
+  }
+  ReactDOM.render(
+  <LoginControl/>,
+  document.getElementById('yong')
+  )
+</script>
+
+
 <!--热门美食-->
 <script type="text/javascript">
 	$(function(){
@@ -667,10 +970,10 @@
 					$('#immg0'+i).attr('src',data[i].pic_2)
 					$('#diqu0'+i).text(data[i].area)
 					$('#weidao0'+i).text(data[i].taste)
-                                                     $('#lishi0'+i).text(data[i].intro)
-                                                     $('#ming0'+i).text(data[i].name)
-                                                     $('#diqu0'+i).attr('href','meishi.html?id='+data[i].id);
-                                                     $('#weidao0'+i).attr('href','meishi.html?id='+data[i].id);
+                               $('#lishi0'+i).text(data[i].intro)
+                               $('#ming0'+i).text(data[i].name)
+                               $('#diqu0'+i).attr('href','meishi.html?id='+data[i].id);
+                               $('#weidao0'+i).attr('href','meishi.html?id='+data[i].id);
 
 				}
 			},
@@ -680,38 +983,29 @@
 		})
 	})
 </script><!--热门美食-->
-<!-- 获取登录用户名 -->
+<!-- 热门景区 -->
 <script type="text/javascript">
-	if(Cookies.get('user')){
-		document.getElementById('yonghu').innerHTML='欢迎您：'+Cookies.get('user');
-	}
-</script><!-- 获取登录用户名 -->
+    $(function(){
+          $.ajax({
+              url:'scenery/popular/6',
+              method:'get',
+              dataType:'json',
+              success:function(data,status,xhr){
+                console.log(data);
+                for(var i=0;i<data.length;i++){
+                  $('#tuitu'+i).attr('src',data[i].pic_1);
+                  $('#jijie'+i).text(data[i].season);
+                  $('#weizhi'+i).text(data[i].location);
+                  $('#jianjie'+i).text(data[i].intro);
+                  $('#mname'+i).text(data[i].name);
+                  $('#weizhi'+i).attr('href','fengjing1.html?id='+data[i].id);
+                  $('#jijie'+i).attr('href','fengjing1.html?id='+data[i].id);
 
-<!-- 搜索 -->
-<script type="text/javascript">
-        	$('#submit').on('click',function(){
-        		$.ajax({
-        			url:'wad/search/counter',
-        			data:{search:$('#input').val()},
-        			dataType:'json',
-        			type:'post',
-        			success:function(data,status,xhr){
-        				if(data.counter==1){
-        					window.location.href='meishi.html?id='+data.id;}
-        				else if(data.counter>1){
-        					window.location.href='search.html?search='+$('#input').val();
-        				}
-        				else {alert('knkn')}
-        			},
-        			 error:function(xhr,status,error){
-               			console.log(error);
-           		 } 
-        		})
-        	})
+                }
+              },
+          })
+    })
 </script>
-<!-- 搜索 -->
-
-
 
 
 </body>

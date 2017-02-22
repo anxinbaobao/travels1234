@@ -48,7 +48,7 @@ router.route('/search')
         return
       }
 
-      const sql = 'select id, name, alias, taste, area, propose, pic_1, history '
+      const sql = 'select id, name, alias, taste, area, propose, pic_2, history '
           + 'from wine_and_dine '
           + 'where locate(?, name) > 0 '
           + 'or locate(?, alias) > 0 '
@@ -143,7 +143,7 @@ router.route('/popular/:counter')
         res.send({message: 'ERROR_ON_CONNECT_TO_DATABASE'})
         return
       }
-      let sql = 'select wad.id, wad.name, wad.alias, wad.taste, wad.area, wad.propose, wad.pic_1, '
+      let sql = 'select wad.id, wad.name, wad.alias, wad.taste, wad.area, wad.propose, wad.intro,wad.pic_2, '
           + 'count(*) counter '
           + 'from user_log l '
           + 'join wine_and_dine wad on wad.id = l.item_id '
